@@ -67,22 +67,21 @@ a {
 
 /* hover = au survol */
 .nav-links li a:hover {
-  color: #4caf50;
+  color: #007f00;
   text-decoration: underline;
 }
 
 /* active = lien cliqué (au moment du clic) */
 .nav-links li a:active {
-  color: #2e7d32;
+  color: #004d00;
   text-decoration: underline;
 }
 
 /* lien actif (page en cours) grâce à NavLink */
 .nav-links li a.active {
-  color: #4caf50;
+  color: #004d00;
   text-decoration: underline;
 }
-
 
 /* ---------------------- */
 /* Home Page */
@@ -119,8 +118,8 @@ a {
 }
 
 .btn {
-  background-color: #4caf50;
-  color: #fff;
+  background-color: #388e3c;
+  color: #ffffff;
   padding: 0.8rem 1.5rem;
   border-radius: 5px;
   font-weight: bold;
@@ -176,17 +175,16 @@ a {
 
 .about-photo {
   width: 450px;
-  height: 450px;        /* largeur = hauteur → cercle parfait */
-  border-radius: 50%;   /* cercle bien rond */
-  object-fit: cover;    /* remplit sans déformer */
-  object-position: center top; /* tu peux tester center 30% pour ajuster */
+  height: 450px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
 }
 
 .about-objective {
   font-size: 1.2rem;
   line-height: 1.5;
 }
-
 
 /* ---------------------- */
 /* Projects Page */
@@ -284,7 +282,6 @@ a {
   margin-bottom: 0.4rem;
 }
 
-
 /* ---------------------- */
 /* Footer Styles */
 .footer {
@@ -294,9 +291,9 @@ a {
   width: 100%;
 
   display: flex;
-  justify-content: center; /* centre tout */
+  justify-content: center;
   align-items: center;
-  gap: 3rem; /* espace entre texte et icônes */
+  gap: 3rem;
   font-size: 1.2rem;
 
   position: fixed;
@@ -329,7 +326,30 @@ a {
   display: flex; 
   justify-content: center;
   align-items: center;
-  gap: 1.5rem; /* espace entre les icônes/lien */
+  gap: 1.5rem;
+}
+
+/* ---------------------- */
+/* Boutons à contraste élevé */
+.high-contrast {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.btn.high-contrast {
+  background-color: #1b5e20;
+}
+
+.btn.high-contrast:hover {
+  background-color: #2e7d32;
+}
+
+.btn-secondary.high-contrast {
+  background-color: #222222;
+}
+
+.btn-secondary.high-contrast:hover {
+  background-color: #111111;
 }
 
 /* ---------------------- */
@@ -380,6 +400,6 @@ a {
   }
 
   .footer-links {
-    flex-direction: row; /* même sur mobile, reste horizontal */
+    flex-direction: row;
   }
 }
