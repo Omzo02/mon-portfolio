@@ -3,7 +3,7 @@ import projects from "../data/projects";
 
 function Projects() {
   return (
-    <div className="projects-page">
+    <main className="projects-page">
       <header className="projects-header">
         <h1>Mes Projets</h1>
         <p>
@@ -12,61 +12,66 @@ function Projects() {
         </p>
       </header>
 
-      <div className="projects-container">
+      <section className="projects-container" aria-label="Liste des projets">
         {projects.map((proj) => (
-          <div key={proj.id} className="project-card"> 
-            <img src={proj.image} width="480" height="647" alt={proj.title} />
-               
-            <h2>{proj.title}</h2>
-            <p>{proj.description}</p>
+          <article
+            key={proj.id}
+            className="project-card"
+            itemScope
+            itemType="https://schema.org/CreativeWork"
+            aria-label={`Projet ${proj.title}, compétences : ${proj.skills.join(", ")}`}
+          >
+            <img
+              src={proj.image}
+              width="480"
+              height="647"
+              alt={`Capture du projet ${proj.title}`}
+              itemProp="image"
+            />
 
-            {/* ✅ Problématiques */}
-            {proj.details.problematiques && (
-              <div className="project-section">
+            <h2 itemProp="name">{proj.title}</h2>
+            <p itemProp="description">{proj.description.join(" ")}</p>
+
+            {/* Problématiques */}
+            {proj.details?.problematiques && (
+              <aside className="project-section" aria-label={`Problématiques du projet ${proj.title}`}>
                 <h3>Problématiques</h3>
-                <ul>
-                  {proj.details.problematiques.map((item, idx) => (
-                    <li key={idx}>{item}</li>
-                  ))}
-                </ul>
-              </div>
+                <p>{proj.details.problematiques.join(" ")}</p>
+              </aside>
             )}
 
-            {/* ✅ Solutions */}
-            {proj.details.solutions && (
-              <div className="project-section">
+            {/* Solutions */}
+            {proj.details?.solutions && (
+              <aside className="project-section" aria-label={`Solutions apportées pour le projet ${proj.title}`}>
                 <h3>Solutions</h3>
-                <ul>
-                  {proj.details.solutions.map((item, idx) => (
-                    <li key={idx}>{item}</li>
-                  ))}
-                </ul>
-              </div>
+                <p>{proj.details.solutions.join(" ")}</p>
+              </aside>
             )}
 
-            {/* ✅ Compétences développées */}
-            {proj.details.competences && (
-              <div className="project-section">
+            {/* Compétences développées */}
+            {proj.details?.competences && (
+              <aside className="project-section" aria-label={`Compétences développées dans le projet ${proj.title}`}>
                 <h3>Compétences développées</h3>
-                <ul>
-                  {proj.details.competences.map((item, idx) => (
-                    <li key={idx}>{item}</li>
-                  ))}
-                </ul>
-              </div>
+                <p>{proj.details.competences.join(", ")}</p>
+              </aside>
             )}
 
             <p className="skills">
-              Compétences techniques : {proj.skills.join(", ")}
+              Compétences techniques : <span itemProp="skills">{proj.skills.join(", ")}</span>
             </p>
 
-            <a href={proj.link} target="_blank" rel="noopener noreferrer">
+            <a
+              href={proj.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              itemProp="url"
+            >
               Voir le code
             </a>
-          </div>
+          </article>
         ))}
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
 

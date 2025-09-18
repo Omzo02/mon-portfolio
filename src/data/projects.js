@@ -2,71 +2,95 @@ const projects = [
   {
     id: 1,
     title: "Booki",
+    description: [
+      "Création de la page d'accueil d’une agence de voyage",
+      "Développé en HTML & CSS",
+      "Responsive design adapté aux mobiles et tablettes",
+      "Projet validé dans le cadre de la formation OpenClassrooms"
+    ],
     image: "/images/booki.webp",
     skills: ["HTML", "CSS"],
     link: "https://github.com/Omzo02/deuxiemeprojet",
     details: {
       problematiques: [
-        "Créer une page d'accueil responsive",
-        "Respecter la maquette graphique"
+        "Créer une interface claire pour les utilisateurs",
+        "Rendre le site responsive sur tous les écrans"
       ],
       solutions: [
-        "Utilisation de HTML sémantique et CSS flexbox",
-        "Responsive design pour mobile et tablette"
+        "Utilisation de Flexbox et Grid pour la mise en page",
+        "Media queries adaptées pour mobile et tablette"
       ],
-      competences: ["HTML", "CSS", "Responsive design"]
+      competences: ["HTML5", "CSS3", "Responsive Design"]
     }
   },
   {
     id: 2,
     title: "Sophie Bluel",
+    description: [
+      "Développement d’une page web dynamique avec JavaScript",
+      "Manipulation du DOM et consommation d’une API REST",
+      "Mise en place d’un système de connexion avec token",
+      "Ajout et suppression d’éléments via une modale"
+    ],
     image: "/images/Shopie-bluel.webp",
     skills: ["DOM", "JavaScript", "API", "Backend"],
     link: "https://github.com/Omzo02/troisieme-projet",
     details: {
       problematiques: [
-        "Manipulation du DOM",
-        "Connexion sécurisée avec token"
+        "Gérer les interactions dynamiques sur la page",
+        "Sécuriser les opérations de modification de données"
       ],
       solutions: [
-        "Création d’une interface dynamique avec JavaScript",
-        "Gestion de l’authentification côté front-end et back-end"
+        "Utilisation de JavaScript pour le DOM dynamique",
+        "Gestion du token pour l'authentification"
       ],
-      competences: ["JavaScript", "API REST", "Authentification"]
+      competences: ["JavaScript", "API REST", "DOM Manipulation", "Sécurité"]
     }
   },
   {
     id: 3,
     title: "Mon vieux Grimoire",
+    description: [
+      "Développement du back-end d’un site de notation de livres",
+      "Architecture REST avec Express & Node.js",
+      "Stockage sécurisé des données avec MongoDB",
+      "Mise en place de la logique métier (CRUD complet, sécurité, auth)"
+    ],
     image: "/images/Grimoire.webp",
     skills: ["Express", "JavaScript", "Node.js", "Mongoose", "MongoDB", "CRUD"],
     link: "https://github.com/Omzo02/sixieme_projet",
     details: {
       problematiques: [
-        "Créer une API sécurisée pour la gestion des livres",
-        "Mettre en place le CRUD complet"
+        "Structurer le back-end pour un CRUD complet",
+        "Assurer la sécurité des données"
       ],
       solutions: [
-        "Architecture REST avec Node.js et Express",
-        "Stockage des données avec MongoDB/Mongoose"
+        "Architecture REST avec Express",
+        "Stockage sécurisé avec MongoDB et Mongoose"
       ],
-      competences: ["Node.js", "Express", "MongoDB", "CRUD", "Sécurité"]
+      competences: ["Node.js", "Express", "MongoDB", "Mongoose", "CRUD", "Sécurité"]
     }
   },
   {
     id: 4,
     title: "Kasa",
+    description: [
+      "Développement d’une application de location immobilière",
+      "Front-end réalisé avec React et React Router",
+      "Respect des bonnes pratiques Lighthouse et Wave",
+      "Responsive et optimisé pour l’accessibilité"
+    ],
     image: "/images/Kasa.webp",
     skills: ["React", "Chrome DevTools", "GTMetrix", "Wave"],
     link: "https://github.com/Omzo02/cinquieme_projet",
     details: {
       problematiques: [
-        "Application React avec routing",
-        "Optimisation performance et accessibilité"
+        "Créer une interface utilisateur fluide",
+        "Optimiser l'accessibilité et la performance"
       ],
       solutions: [
-        "React Router pour navigation",
-        "Tests Lighthouse et Wave pour performance et accessibilité"
+        "Utilisation de React et React Router",
+        "Tests et optimisations avec Lighthouse et Wave"
       ],
       competences: ["React", "React Router", "Accessibilité", "Performance"]
     }
@@ -74,19 +98,25 @@ const projects = [
   {
     id: 5,
     title: "Nina Carducci",
+    description: [
+      "Débogage et optimisation d’un site de photographe",
+      "Amélioration des performances (score Lighthouse 90+)",
+      "Optimisation SEO et ajout des données structurées Schema.org",
+      "Correction des problèmes d’accessibilité"
+    ],
     image: "/images/Nina-Carducci.webp",
     skills: ["Google Lighthouse", "SEO", "Schema.org", "Wave"],
     link: "https://github.com/Omzo02/quatrieme_projet",
     details: {
       problematiques: [
-        "Optimiser un site existant pour SEO et accessibilité",
-        "Améliorer les performances"
+        "Améliorer les performances d'un site existant",
+        "Optimiser le SEO et l'accessibilité"
       ],
       solutions: [
-        "Audit Lighthouse et correction des erreurs",
-        "Ajout des données structurées Schema.org"
+        "Audit avec Lighthouse et correction des problèmes",
+        "Ajout de balises et données structurées pour le SEO"
       ],
-      competences: ["SEO", "Performance", "Accessibilité", "Lighthouse"]
+      competences: ["SEO", "Accessibilité", "Lighthouse", "Schema.org", "Optimisation"]
     }
   }
 ];

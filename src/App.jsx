@@ -5,23 +5,29 @@ import Home from './pages/Home';
 import Projects from './pages/Projects';
 import About from './pages/About';
 
-
-
 function App() {
   return (
     <div className="app-wrapper">
-      <Navbar />
-      <div className="content-wrapper">
+      {/* Navigation principale */}
+      <header>
+        <Navbar />
+      </header>
+
+      {/* Contenu principal */}
+      <main className="content-wrapper">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/about" element={<About />} />
         </Routes>
-      </div>
-      <Footer />
+      </main>
+
+      {/* Pied de page */}
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }
-
 
 export default App;
