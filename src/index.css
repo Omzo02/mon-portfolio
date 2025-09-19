@@ -65,19 +65,16 @@ a {
   transition: color 0.3s, text-decoration 0.3s;
 }
 
-/* hover = au survol */
 .nav-links li a:hover {
   color: #007f00;
   text-decoration: underline;
 }
 
-/* active = lien cliqué (au moment du clic) */
 .nav-links li a:active {
   color: #004d00;
   text-decoration: underline;
 }
 
-/* lien actif (page en cours) grâce à NavLink */
 .nav-links li a.active {
   color: #004d00;
   text-decoration: underline;
@@ -118,7 +115,7 @@ a {
 }
 
 .btn {
-  background-color: #388e3c;
+  background-color: #2e7d32; /* vert foncé pour contraste */
   color: #ffffff;
   padding: 0.8rem 1.5rem;
   border-radius: 5px;
@@ -127,7 +124,7 @@ a {
 }
 
 .btn:hover {
-  background-color: #45a049;
+  background-color: #1b5e20; /* encore plus foncé */
 }
 
 .home-photo {
@@ -201,7 +198,7 @@ a {
 
 .projects-header p {
   font-size: 1.1rem;
-  color: #555;
+  color: #333; /* plus foncé pour contraste */
   max-width: 700px;
   margin: 0 auto 40px auto;
 }
@@ -240,18 +237,18 @@ a {
 .project-card h2 {
   font-size: 1.4rem;
   margin-bottom: 10px;
-  color: #4caf50;
+  color: #1b5e20; /* vert très foncé pour contraste */
 }
 
 .project-card p {
   margin-bottom: 10px;
-  color: #555;
+  color: #333; /* texte plus foncé */
 }
 
-.project-card .skills {
-  font-style: italic;
-  font-size: 0.9rem;
-  color: #777;
+.project-card .skills,
+.project-card strong,
+.project-card em {
+  color: #222; /* amélioration contraste compétences */
 }
 
 .project-card a {
@@ -273,7 +270,7 @@ a {
   text-align: left;
   margin: 0 auto 1rem auto;
   padding-left: 1.2rem;
-  color: #555;
+  color: #333; /* texte plus foncé */
   font-size: 0.95rem;
   line-height: 1.5;
 }
@@ -289,13 +286,11 @@ a {
   color: #fff;
   padding: 1.5rem 2rem;
   width: 100%;
-
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 3rem;
   font-size: 1.2rem;
-
   position: fixed;
   bottom: 0;
   left: 0;
@@ -307,7 +302,6 @@ a {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
-
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -323,33 +317,25 @@ a {
 }
 
 .footer-links {
-  display: flex; 
+  display: flex;
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
 }
 
 /* ---------------------- */
-/* Boutons à contraste élevé */
-.high-contrast {
-  color: #ffffff;
+/* Bouton secondaire (CV) */
+.btn-secondary {
+  background-color: #444; /* gris foncé */
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
   font-weight: bold;
+  transition: background 0.3s;
 }
 
-.btn.high-contrast {
-  background-color: #1b5e20;
-}
-
-.btn.high-contrast:hover {
-  background-color: #2e7d32;
-}
-
-.btn-secondary.high-contrast {
-  background-color: #222222;
-}
-
-.btn-secondary.high-contrast:hover {
-  background-color: #111111;
+.btn-secondary:hover {
+  background-color: #222; /* encore plus foncé */
 }
 
 /* ---------------------- */
