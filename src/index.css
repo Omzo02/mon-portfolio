@@ -60,9 +60,9 @@ a {
 }
 
 .nav-links {
-  list-style: none; /* supprime puces */
+  list-style: none;
   display: flex;
-  flex-direction: column; /* vertical par défaut pour mobile */
+  flex-direction: column;
   gap: 0.5rem;
   margin: 0;
   padding: 0;
@@ -75,15 +75,21 @@ a {
   transition: color 0.3s, text-decoration 0.3s;
 }
 
-.nav-links li a:hover,
-.nav-links li a:active,
-.nav-links li a.active {
-  color: #007f00;
+.nav-links li a:hover {
+  color: #4caf50;
   text-decoration: underline;
 }
 
-/* ---------------------- */
-/* Home Page Styles */
+.nav-links li a:active {
+  color: #2e7d32;
+  text-decoration: underline;
+}
+
+.nav-links li a.active {
+  color: #4caf50;
+  text-decoration: underline;
+}
+
 /* ---------------------- */
 .home-container {
   display: flex;
@@ -118,8 +124,8 @@ a {
 }
 
 .btn {
-  background-color: #2e7d32;
-  color: #ffffff;
+  background-color: #4caf50;
+  color: #fff;
   padding: 0.8rem 1.5rem;
   border-radius: 5px;
   font-weight: bold;
@@ -127,13 +133,13 @@ a {
 }
 
 .btn:hover {
-  background-color: #45a049;
+  background-color: #1b5e20;
 }
 
 .home-photo-container {
   display: flex;
   justify-content: center;
-  margin: 1rem 0; /* espace entre image et texte */
+  margin: 1rem 0;
 }
 
 .home-photo {
@@ -174,19 +180,35 @@ a {
 }
 
 .about-photo {
-  width: 200px;
-  height: 200px;
+  width: 450px;
+  height: 450px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center top;
 }
 
-/* ---------------------- */
-/* Projects Page Styles */
+.about-objective {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
 /* ---------------------- */
 .projects-page {
   text-align: center;
-  padding: 6rem 2rem 2rem;
+  padding: 50px 20px;
+}
+
+.projects-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.projects-header p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
 }
 
 .projects-container {
@@ -218,15 +240,20 @@ a {
 }
 
 .project-card h2 {
-  color: #2e7d32; /* vert foncé pour un contraste suffisant */
-  background-color: #ffffff; /* fond blanc */
-  padding: 0.2rem 0.4rem; /* léger padding pour bien détacher le texte du fond */
-  border-radius: 4px; /* optionnel, juste pour le style */
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #4caf50;
 }
 
 .project-card p {
   margin-bottom: 10px;
-  color: #555;
+  color: #333;
+}
+
+.project-card .skills {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #777;
 }
 
 .project-card a {
@@ -244,6 +271,19 @@ a {
   background: #005f8d;
 }
 
+.description-list {
+  text-align: left;
+  margin: 0 auto 1rem auto;
+  padding-left: 1.2rem;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.description-list li {
+  margin-bottom: 0.4rem;
+}
+
 /* ---------------------- */
 /* Footer Styles */
 /* ---------------------- */
@@ -251,11 +291,12 @@ a {
   background-color: #000;
   color: #fff;
   padding: 1.5rem 2rem;
+  width: 100%;
   display: flex;
-  justify-content: center; /* icônes horizontales */
+  justify-content: center;
   align-items: center;
-  gap: 2rem;
-  font-size: 1rem;
+  gap: 3rem;
+  font-size: 1.2rem;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -266,6 +307,10 @@ a {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
 }
 
 .footer a:hover {
@@ -273,13 +318,14 @@ a {
 }
 
 .footer-links {
-  display: flex;
-  gap: 1rem; /* horizontal */
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 /* ---------------------- */
-/* Desktop Styles (min-width 769px) */
-/* ---------------------- */
+/* Desktop Styles */
 @media (min-width: 769px) {
   .home-container,
   .about-container {
@@ -313,7 +359,7 @@ a {
   }
 
   .nav-links {
-    flex-direction: row; /* horizontal desktop */
+    flex-direction: row;
     gap: 1.5rem;
   }
 
@@ -322,13 +368,12 @@ a {
   }
 
   .footer {
-    justify-content: center; /* horizontal */
+    justify-content: center;
   }
 }
 
 /* ---------------------- */
-/* Mobile Styles (max-width 768px) */
-/* ---------------------- */
+/* Mobile Styles */
 @media (max-width: 768px) {
   .home-container,
   .about-container {
@@ -353,14 +398,12 @@ a {
   }
 
   .footer {
-    flex-direction: row; /* garder icônes horizontal */
+    flex-direction: row;
     gap: 1rem;
     text-align: center;
   }
 
-  .nav-links {
-    flex-direction: column; /* vertical pour mobile */
-    align-items: flex-start; /* aligner sous logo */
-    gap: 0.5rem;
+  .footer-links {
+    flex-direction: row;
   }
 }
