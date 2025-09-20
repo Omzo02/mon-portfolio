@@ -31,7 +31,6 @@ a {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding-top: 80px; /* espace pour navbar fixée */
 }
 
 /* ---------------------- */
@@ -43,11 +42,11 @@ a {
   padding: 1rem 2rem;
   background-color: #f0f0f0;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  position: fixed; /* navbar fixée */
+  position: fixed;   /* garde la navbar fixée en haut */
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000; /* toujours au-dessus */
+  z-index: 1000;
 }
 
 .logo {
@@ -107,7 +106,7 @@ a {
 .about-text h2 {
   font-size: 1.2rem;
   margin-bottom: 1rem;
-  color: #2e7d32; /* vert foncé pour titres */
+  color: #2e7d32; /* vert foncé pour contraste correct */
 }
 
 /* Buttons */
@@ -119,7 +118,7 @@ a {
 }
 
 .btn {
-  background-color: #2e7d32; /* vert foncé */
+  background-color: #2e7d32; /* vert foncé pour contraste maximal */
   color: #ffffff; /* texte blanc */
   padding: 0.8rem 1.5rem;
   border-radius: 5px;
@@ -128,7 +127,7 @@ a {
 }
 
 .btn:hover {
-  background-color: #1b5e20; /* vert très foncé */
+  background-color: #1b5e20; /* vert très foncé au survol */
 }
 
 .btn-secondary {
@@ -137,7 +136,7 @@ a {
 }
 
 .btn-secondary:hover {
-  background-color: #000; /* noir pur */
+  background-color: #000; /* noir pur au survol */
 }
 
 /* Photos */
@@ -156,6 +155,7 @@ a {
   justify-content: center;
   align-items: center;
   margin: 1rem 0;
+  padding: 2rem 0; 
 }
 
 /* ---------------------- */
@@ -168,9 +168,10 @@ a {
 .projects-container {
   display: flex;
   flex-direction: column;
-  gap: 2rem; /* espace plus grand entre paragraphe et cartes */
+  gap: 2rem; /* espace entre chaque carte */
   max-width: 1000px;
   margin: 0 auto;
+  padding: 2rem 0; /* espace interne pour éviter que les cartes touchent le haut */
 }
 
 .project-card {
@@ -195,19 +196,21 @@ a {
 
 .project-card h2 {
   font-size: 1.4rem;
-  margin-bottom: 10px;
-  color: #2e7d32; /* vert foncé */
+  margin-bottom: 15px; /* espace sous le titre */
+  color: #2e7d32;
 }
 
-.project-card p {
-  margin-bottom: 10px;
+.project-card p,
+.project-card .skills,
+.description-list {
   color: #333;
+  margin-bottom: 15px; /* espace entre texte et bas de la carte */
 }
 
 .project-card .skills {
   font-style: italic;
   font-size: 0.9rem;
-  color: #555; /* contraste amélioré */
+  color: #555; /* plus contrasté */
 }
 
 .project-card a {
@@ -254,7 +257,7 @@ a {
 }
 
 .footer a {
-  color: #ffffff; /* texte blanc sur fond noir */
+  color: #ffffff;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -299,6 +302,7 @@ a {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 2rem; /* espace horizontal et vertical entre les cartes */
   }
 
   .project-card {
@@ -355,5 +359,11 @@ a {
 
   .projects-container {
     flex-direction: column;
+    gap: 2rem; /* espace vertical entre cartes sur mobile */
+    padding: 1rem 0;
+  }
+
+  .project-card {
+    width: 100%;
   }
 }
