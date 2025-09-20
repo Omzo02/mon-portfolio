@@ -42,11 +42,6 @@ a {
   padding: 1rem 2rem;
   background-color: #f0f0f0;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  position: fixed;   /* garde la navbar fixée en haut */
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
 }
 
 .logo {
@@ -69,7 +64,7 @@ a {
 
 .nav-links li a:hover,
 .nav-links li a.active {
-  color: #007f00; /* vert foncé pour contraste correct */
+  color: #333;
   text-decoration: underline;
 }
 
@@ -102,11 +97,9 @@ a {
   margin-bottom: 0.5rem;
 }
 
-.home-text h2,
-.about-text h2 {
+.home-text h2 {
   font-size: 1.2rem;
   margin-bottom: 1rem;
-  color: #2e7d32; /* vert foncé pour contraste correct */
 }
 
 /* Buttons */
@@ -118,8 +111,8 @@ a {
 }
 
 .btn {
-  background-color: #2e7d32; /* vert foncé pour contraste maximal */
-  color: #ffffff; /* texte blanc */
+  background-color: #4caf50;
+  color: #fff;
   padding: 0.8rem 1.5rem;
   border-radius: 5px;
   font-weight: bold;
@@ -127,16 +120,7 @@ a {
 }
 
 .btn:hover {
-  background-color: #1b5e20; /* vert très foncé au survol */
-}
-
-.btn-secondary {
-  background-color: #333; /* gris foncé */
-  color: #ffffff; /* texte blanc */
-}
-
-.btn-secondary:hover {
-  background-color: #000; /* noir pur au survol */
+  background-color: #1b5e20;
 }
 
 /* Photos */
@@ -155,8 +139,18 @@ a {
   justify-content: center;
   align-items: center;
   margin: 1rem 0;
-  padding: 2rem 0; 
 }
+
+/* ---------------------- */
+/* Correction contraste pour p.skills */
+p.skills {
+  color: #333; /* texte principal foncé */
+}
+
+p.skills span[itemprop="skills"] {
+  color: #000; /* compétences en noir pour contraste maximal */
+}
+/* ---------------------- */
 
 /* ---------------------- */
 /* Projects Page */
@@ -168,10 +162,9 @@ a {
 .projects-container {
   display: flex;
   flex-direction: column;
-  gap: 2rem; /* espace entre chaque carte */
+  gap: 1.5rem;
   max-width: 1000px;
   margin: 0 auto;
-  padding: 2rem 0; /* espace interne pour éviter que les cartes touchent le haut */
 }
 
 .project-card {
@@ -196,21 +189,19 @@ a {
 
 .project-card h2 {
   font-size: 1.4rem;
-  margin-bottom: 15px; /* espace sous le titre */
-  color: #2e7d32;
+  margin-bottom: 10px;
+  color: #388E3C;;
 }
 
-.project-card p,
-.project-card .skills,
-.description-list {
+.project-card p {
+  margin-bottom: 10px;
   color: #333;
-  margin-bottom: 15px; /* espace entre texte et bas de la carte */
 }
 
 .project-card .skills {
   font-style: italic;
   font-size: 0.9rem;
-  color: #555; /* plus contrasté */
+  color: #555555;
 }
 
 .project-card a {
@@ -241,6 +232,8 @@ a {
   margin-bottom: 0.4rem;
 }
 
+
+
 /* ---------------------- */
 /* Footer */
 .footer {
@@ -257,7 +250,7 @@ a {
 }
 
 .footer a {
-  color: #ffffff;
+  color: #fff;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -302,7 +295,6 @@ a {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 2rem; /* espace horizontal et vertical entre les cartes */
   }
 
   .project-card {
@@ -328,29 +320,6 @@ a {
     padding-bottom: 6rem; /* espace pour le footer */
   }
 
-  .home-text-photo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    width: 100%;
-  }
-
-  .home-photo-container {
-    margin: 0.5rem 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .home-buttons {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-  }
-
   .home-photo,
   .about-photo {
     width: 150px;
@@ -359,11 +328,5 @@ a {
 
   .projects-container {
     flex-direction: column;
-    gap: 2rem; /* espace vertical entre cartes sur mobile */
-    padding: 1rem 0;
-  }
-
-  .project-card {
-    width: 100%;
   }
 }
