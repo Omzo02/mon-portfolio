@@ -6,11 +6,25 @@ function Home() {
     <main className="home-container">
       <section className="home-text" aria-label="Présentation d'Ousmane DIOP">
         <h1>Salut, moi c’est <span>Ousmane</span></h1>
-        <p>
-          Je suis un développeur web en formation, passionné par React et JavaScript. 
-          Ce portfolio présente mon parcours, mes compétences et les projets sur lesquels j’ai travaillé. 
-          Je continue à développer mes connaissances pour devenir un développeur confirmé et prêt à relever de nouveaux défis.
-        </p>
+
+        {/* Wrapper texte + image pour mobile */}
+        <div className="home-text-photo">
+          <h2>Développeur web en formation</h2>
+          <div className="home-photo-container" aria-label="Portrait d'Ousmane DIOP, développeur web">
+            <img 
+              src="/images/moi.webp" 
+              width="480" 
+              height="647" 
+              alt="Portrait Ousmane DIOP, développeur web" 
+              className="home-photo" 
+            />
+          </div>
+          <p>
+            Je suis un développeur web en formation, passionné par React et JavaScript. 
+            Ce portfolio présente mon parcours, mes compétences et les projets sur lesquels j’ai travaillé. 
+            Je continue à développer mes connaissances pour devenir un développeur confirmé et prêt à relever de nouveaux défis.
+          </p>
+        </div>
 
         <div className="home-buttons">
           <Link 
@@ -30,16 +44,6 @@ function Home() {
           </a>
         </div>
       </section>
-
-      <aside className="home-photo-container" aria-label="Portrait d'Ousmane DIOP, développeur web">
-        <img 
-          src="/images/moi.webp" 
-          width="480" 
-          height="647" 
-          alt="Portrait Ousmane DIOP, développeur web" 
-          className="home-photo" 
-        />
-      </aside>
     </main>
   );
 }
