@@ -42,6 +42,11 @@ a {
   padding: 1rem 2rem;
   background-color: #f0f0f0;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 .logo {
@@ -64,7 +69,7 @@ a {
 
 .nav-links li a:hover,
 .nav-links li a.active {
-  color: #333;
+  color: #4caf50;
   text-decoration: underline;
 }
 
@@ -76,7 +81,7 @@ a {
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
-  padding: 6rem 2rem 6rem;
+  padding: 6rem 2rem 6rem; /* espace pour navbar */
   max-width: 1000px;
   margin: 0 auto;
   text-align: center;
@@ -142,21 +147,18 @@ a {
 }
 
 /* ---------------------- */
-/* Correction contraste pour p.skills */
-p.skills {
-  color: #333; /* texte principal foncé */
-}
-
-p.skills span[itemprop="skills"] {
-  color: #000; /* compétences en noir pour contraste maximal */
-}
-/* ---------------------- */
-
-/* ---------------------- */
 /* Projects Page */
 .projects-page {
   text-align: center;
-  padding: 50px 20px;
+  padding: 6rem 20px 50px 20px; /* espace pour navbar */
+}
+
+.projects-page h1 {
+  margin-bottom: 1.5rem; /* espace sous le titre */
+}
+
+.projects-page p {
+  margin-bottom: 1.5rem; /* espace entre le paragraphe et les cards */
 }
 
 .projects-container {
@@ -190,7 +192,7 @@ p.skills span[itemprop="skills"] {
 .project-card h2 {
   font-size: 1.4rem;
   margin-bottom: 10px;
-  color: #388E3C;;
+  color: #4caf50;
 }
 
 .project-card p {
@@ -201,7 +203,7 @@ p.skills span[itemprop="skills"] {
 .project-card .skills {
   font-style: italic;
   font-size: 0.9rem;
-  color: #555555;
+  color: #777;
 }
 
 .project-card a {
@@ -231,8 +233,6 @@ p.skills span[itemprop="skills"] {
 .description-list li {
   margin-bottom: 0.4rem;
 }
-
-
 
 /* ---------------------- */
 /* Footer */
@@ -309,15 +309,25 @@ p.skills span[itemprop="skills"] {
 }
 
 /* ---------------------- */
-/* Mobile Styles */
-@media (max-width: 768px) {
+/* Mobile & Tablet Styles */
+@media (max-width: 1024px) {
   .home-container,
-  .about-container {
+  .about-container,
+  .projects-page {
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 1.5rem;
-    padding-bottom: 6rem; /* espace pour le footer */
+    padding-top: 5rem; /* espace pour navbar fixe */
+    padding-bottom: 6rem; /* espace pour footer */
+  }
+
+  .projects-page h1 {
+    margin-top: 1rem; /* décale le titre sous la navbar */
+  }
+
+  .projects-page p {
+    margin-bottom: 1.5rem; /* espace entre paragraphe et project-card */
   }
 
   .home-photo,
