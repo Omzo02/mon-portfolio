@@ -9,12 +9,12 @@ function Home() {
         <h1>Salut, moi c’est <span>Ousmane</span></h1>
         <h2>Développeur web en formation, spécialisé en React et JavaScript</h2>
 
-        {/* IMAGE centrée sur mobile */}
-        <div className="home-photo-container mobile-center">
+        {/* IMAGE pour mobile et desktop */}
+        <div className="home-photo-container">
           <img 
             src="/images/moi.webp" 
-            width="480" 
-            height="647" 
+            width="450" 
+            height="450" 
             alt="Portrait Ousmane DIOP, développeur web" 
             className="home-photo" 
           />

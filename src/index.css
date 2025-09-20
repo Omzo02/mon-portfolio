@@ -9,11 +9,10 @@
 
 html, body, #root {
   height: 100%;
-  margin: 0;
   font-family: 'Arial', sans-serif;
   line-height: 1.6;
   color: #333;
-  background-color: #fff; /* Fond blanc pour tout le site */
+  background-color: #fff;
 }
 
 a {
@@ -22,7 +21,7 @@ a {
 }
 
 /* ---------------------- */
-/* App Wrapper pour Footer & Navbar */
+/* App Wrapper for Footer */
 /* ---------------------- */
 .app-wrapper {
   display: flex;
@@ -35,24 +34,22 @@ a {
   display: flex;
   flex-direction: column;
   padding: 2rem;
-  margin-top: 80px; /* Décalage pour navbar fixe */
 }
 
 /* ---------------------- */
-/* Navbar (FIXE) */
+/* Header & Navbar Styles (FIXE) */
 /* ---------------------- */
 .navbar {
+  display: flex;
+  justify-content: space-between; /* logo à gauche, liens à droite */
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #f0f0f0; /* fond visible */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 80px;
-  background-color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 2rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   z-index: 1000;
 }
 
@@ -63,39 +60,40 @@ a {
 }
 
 .nav-links {
+  list-style: none; /* supprime puces */
   display: flex;
-  gap: 1.5rem;
-  list-style: none;
+  flex-direction: column; /* vertical par défaut pour mobile */
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links li a {
   color: #333;
   font-weight: bold;
+  text-decoration: none;
   transition: color 0.3s, text-decoration 0.3s;
 }
 
-.nav-links li a:hover {
+.nav-links li a:hover,
+.nav-links li a:active,
+.nav-links li a.active {
   color: #007f00;
   text-decoration: underline;
 }
 
-.nav-links li a.active {
-  color: #004d00;
-  text-decoration: underline;
-}
-
 /* ---------------------- */
-/* Home Page */
+/* Home Page Styles */
 /* ---------------------- */
 .home-container {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centre horizontal */
-  justify-content: flex-start;
-  gap: 1.5rem;
-  padding: 2rem;
-  max-width: 800px;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1000px;
   margin: 0 auto;
+  padding: 6rem 2rem 2rem;
 }
 
 .home-text {
@@ -103,31 +101,12 @@ a {
 }
 
 .home-text h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 .home-text h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.home-photo-container {
-  display: flex;
-  justify-content: center; /* Centre l'image horizontalement */
-  margin: 1rem 0; /* Espace entre h2 et p */
-}
-
-.home-photo {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: top center;
-}
-
-.home-text p {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   margin-bottom: 1rem;
 }
 
@@ -139,7 +118,7 @@ a {
 }
 
 .btn {
-  background-color: #388e3c;
+  background-color: #2e7d32;
   color: #ffffff;
   padding: 0.8rem 1.5rem;
   border-radius: 5px;
@@ -151,78 +130,237 @@ a {
   background-color: #45a049;
 }
 
-.btn-secondary {
-  background-color: #555;
+.home-photo-container {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0; /* espace entre image et texte */
 }
 
-.btn-secondary:hover {
-  background-color: #333;
+.home-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
 }
 
 /* ---------------------- */
-/* Footer (FIXE) */
+/* About Page Styles */
+/* ---------------------- */
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 6rem 2rem 2rem;
+  text-align: center;
+}
+
+.about-text h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.about-photo-container {
+  display: flex;
+  justify-content: center;
+}
+
+.about-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* ---------------------- */
+/* Projects Page Styles */
+/* ---------------------- */
+.projects-page {
+  text-align: center;
+  padding: 6rem 2rem 2rem;
+}
+
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.project-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.project-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.project-card h2 {
+  color: #2e7d32; /* vert foncé pour un contraste suffisant */
+  background-color: #ffffff; /* fond blanc */
+  padding: 0.2rem 0.4rem; /* léger padding pour bien détacher le texte du fond */
+  border-radius: 4px; /* optionnel, juste pour le style */
+}
+
+.project-card p {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.project-card a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: #0077b6;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.project-card a:hover {
+  background: #005f8d;
+}
+
+/* ---------------------- */
+/* Footer Styles */
 /* ---------------------- */
 .footer {
   background-color: #000;
   color: #fff;
   padding: 1.5rem 2rem;
-  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: center; /* icônes horizontales */
   align-items: center;
-  gap: 3rem;
+  gap: 2rem;
   font-size: 1rem;
   position: fixed;
   bottom: 0;
-  left: 0;
+  width: 100%;
   z-index: 1000;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .footer a:hover {
   color: #4caf50;
 }
 
+.footer-links {
+  display: flex;
+  gap: 1rem; /* horizontal */
+}
+
 /* ---------------------- */
-/* Responsive Mobile */
+/* Desktop Styles (min-width 769px) */
 /* ---------------------- */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
+@media (min-width: 769px) {
+  .home-container,
+  .about-container {
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    height: auto;
-    padding: 1rem 2rem;
+    gap: 3rem;
+    text-align: left;
+  }
+
+  .home-photo,
+  .about-photo {
+    width: 450px;
+    height: 450px;
+  }
+
+  .home-text,
+  .about-text {
+    flex: 1;
+  }
+
+  .projects-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .project-card {
+    flex: 1 1 300px;
+    max-width: 300px;
   }
 
   .nav-links {
-    flex-direction: column;
-    gap: 0.5rem;
+    flex-direction: row; /* horizontal desktop */
+    gap: 1.5rem;
   }
 
-  .home-photo {
+  .navbar {
+    justify-content: space-between;
+  }
+
+  .footer {
+    justify-content: center; /* horizontal */
+  }
+}
+
+/* ---------------------- */
+/* Mobile Styles (max-width 768px) */
+/* ---------------------- */
+@media (max-width: 768px) {
+  .home-container,
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .home-photo,
+  .about-photo {
     width: 150px;
     height: 150px;
   }
 
-  .home-text h1 {
-    font-size: 1.8rem;
-  }
-
-  .home-text h2 {
-    font-size: 1.2rem;
-  }
-
-  .home-text p {
-    font-size: 1rem;
-  }
-
   .home-buttons {
+    justify-content: center;
+  }
+
+  .projects-container {
     flex-direction: column;
-    gap: 0.5rem;
   }
 
   .footer {
-    flex-direction: column;
+    flex-direction: row; /* garder icônes horizontal */
     gap: 1rem;
     text-align: center;
+  }
+
+  .nav-links {
+    flex-direction: column; /* vertical pour mobile */
+    align-items: flex-start; /* aligner sous logo */
+    gap: 0.5rem;
   }
 }
