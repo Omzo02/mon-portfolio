@@ -1,11 +1,13 @@
 /* ---------------------- */
-/* Reset & Base Styles */
+/* RESET & BASE STYLES */
+/* On supprime les marges par défaut et on uniformise l'affichage */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Styles généraux pour la page */
 html, body, #root {
   font-family: 'Arial', sans-serif;
   line-height: 1.6;
@@ -14,13 +16,15 @@ html, body, #root {
   min-height: 100%;
 }
 
+/* Liens : pas de soulignement par défaut, couleur héritée */
 a {
   text-decoration: none;
   color: inherit;
 }
 
 /* ---------------------- */
-/* App Wrapper */
+/* APP WRAPPER */
+/* Structure générale : page en colonne avec footer collé en bas */
 .app-wrapper {
   display: flex;
   flex-direction: column;
@@ -34,7 +38,8 @@ a {
 }
 
 /* ---------------------- */
-/* Navbar */
+/* NAVBAR */
+/* Barre de navigation fixe en haut, avec ombre légère */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -49,11 +54,13 @@ a {
   z-index: 1000;
 }
 
+/* Logo texte */
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
 }
 
+/* Liens de navigation */
 .nav-links {
   list-style: none;
   display: flex;
@@ -67,26 +74,34 @@ a {
   transition: color 0.3s;
 }
 
+/* Lien actif et effet hover */
 .nav-links li a:hover,
 .nav-links li a.active {
-  color: #4caf50;
+  color: #0f1ea2;
   text-decoration: underline;
 }
 
+.navbar a.active {
+  color: #2e7d32; /* Vert foncé pour accessibilité */
+  background-color: #f0f0f0;
+}
+
 /* ---------------------- */
-/* Home & About Pages */
+/* HOME & ABOUT PAGES */
+/* Mise en page des sections principales */
 .home-container,
 .about-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
-  padding: 6rem 2rem 6rem; /* espace pour navbar */
+  padding: 6rem 2rem 6rem; /* espace pour la navbar fixe */
   max-width: 1000px;
   margin: 0 auto;
   text-align: center;
 }
 
+/* Bloc texte des pages */
 .home-text,
 .about-text {
   display: flex;
@@ -96,6 +111,7 @@ a {
   gap: 1rem;
 }
 
+/* Titres */
 .home-text h1,
 .about-text h1 {
   font-size: 2rem;
@@ -107,7 +123,8 @@ a {
   margin-bottom: 1rem;
 }
 
-/* Buttons */
+/* ---------------------- */
+/* BOUTONS */
 .home-buttons {
   display: flex;
   gap: 1rem;
@@ -116,7 +133,7 @@ a {
 }
 
 .btn {
-  background-color: #4caf50;
+  background-color: #2e7d32; /* Vert foncé = bon contraste */
   color: #fff;
   padding: 0.8rem 1.5rem;
   border-radius: 5px;
@@ -128,7 +145,18 @@ a {
   background-color: #1b5e20;
 }
 
-/* Photos */
+/* Boutons secondaires (ex : télécharger CV) */
+.btn-secondary {
+  background-color: #1565c0; /* Bleu soutenu */
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background-color: #0d47a1;
+}
+
+/* ---------------------- */
+/* PHOTOS PROFIL */
 .home-photo,
 .about-photo {
   width: 150px;
@@ -147,20 +175,21 @@ a {
 }
 
 /* ---------------------- */
-/* Projects Page */
+/* PROJECTS PAGE */
 .projects-page {
   text-align: center;
-  padding: 6rem 20px 50px 20px; /* espace pour navbar */
+  padding: 50px 20px;
 }
 
-.projects-page h1 {
-  margin-bottom: 1.5rem; /* espace sous le titre */
+.projects-header h1 {
+  margin-bottom: 1rem;
 }
 
-.projects-page p {
-  margin-bottom: 1.5rem; /* espace entre le paragraphe et les cards */
+.projects-header p {
+  margin-bottom: 2rem;
 }
 
+/* Liste des projets */
 .projects-container {
   display: flex;
   flex-direction: column;
@@ -169,6 +198,7 @@ a {
   margin: 0 auto;
 }
 
+/* Carte projet */
 .project-card {
   background: #fff;
   border-radius: 12px;
@@ -192,7 +222,8 @@ a {
 .project-card h2 {
   font-size: 1.4rem;
   margin-bottom: 10px;
-  color: #4caf50;
+  color: #2c3e50;
+  background-color: #ffffff;
 }
 
 .project-card p {
@@ -203,7 +234,8 @@ a {
 .project-card .skills {
   font-style: italic;
   font-size: 0.9rem;
-  color: #777;
+  color: #333333;
+  background-color: #ffffff;
 }
 
 .project-card a {
@@ -235,7 +267,7 @@ a {
 }
 
 /* ---------------------- */
-/* Footer */
+/* FOOTER */
 .footer {
   background-color: #000;
   color: #fff;
@@ -269,7 +301,42 @@ a {
 }
 
 /* ---------------------- */
-/* Desktop Styles */
+/* NOT FOUND PAGE */
+.notfound-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical centré */
+  align-items: center;     /* horizontal centré */
+  text-align: center;
+  min-height: 80vh;
+  gap: 1rem;
+  padding: 2rem;
+  color: #e53935;          /* rouge pour erreur */
+  background-color: #fff;
+}
+
+.notfound-container h1 {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+}
+
+.notfound-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #333; /* texte secondaire */
+}
+
+.notfound-container svg {
+  margin-bottom: 1.5rem;
+}
+
+.notfound-container .btn {
+  padding: 0.8rem 1.5rem;
+  font-weight: bold;
+}
+
+/* ---------------------- */
+/* RESPONSIVE - DESKTOP */
 @media (min-width: 769px) {
   .home-container,
   .about-container {
@@ -278,6 +345,7 @@ a {
     align-items: center;
     gap: 3rem;
     text-align: left;
+    padding-top: 6rem; /* espace sous navbar fixe */
   }
 
   .home-photo,
@@ -289,6 +357,10 @@ a {
   .home-text,
   .about-text {
     flex: 1;
+  }
+
+  .projects-page {
+    padding-top: 6rem;
   }
 
   .projects-container {
@@ -309,25 +381,17 @@ a {
 }
 
 /* ---------------------- */
-/* Mobile & Tablet Styles */
-@media (max-width: 1024px) {
+/* RESPONSIVE - MOBILE */
+@media (max-width: 768px) {
+  /* Home & About : colonne centrée */
   .home-container,
-  .about-container,
-  .projects-page {
+  .about-container {
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 1.5rem;
-    padding-top: 5rem; /* espace pour navbar fixe */
-    padding-bottom: 6rem; /* espace pour footer */
-  }
-
-  .projects-page h1 {
-    margin-top: 1rem; /* décale le titre sous la navbar */
-  }
-
-  .projects-page p {
-    margin-bottom: 1.5rem; /* espace entre paragraphe et project-card */
+    padding-top: 8rem;  /* espace sous navbar fixe */
+    padding-bottom: 6rem; /* espace avant footer */
   }
 
   .home-photo,
@@ -336,7 +400,18 @@ a {
     height: 150px;
   }
 
+  .projects-page {
+    padding-top: 8rem;
+    padding-bottom: 6rem;
+  }
+
   .projects-container {
     flex-direction: column;
+  }
+
+  /* NotFound correction pour mobile */
+  .notfound-container {
+    padding-top: 8rem; /* espace sous navbar fixe */
+    min-height: auto;   /* supprimer hauteur fixe pour mobile */
   }
 }

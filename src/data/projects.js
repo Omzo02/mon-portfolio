@@ -1,17 +1,20 @@
+// Déclaration d'un tableau contenant la liste des projets
 const projects = [
   {
-    id: 1,
-    title: "Booki",
+    id: 1, // Identifiant unique du projet
+    title: "Booki", // Nom du projet
     description: [
+      // Liste décrivant les grandes lignes du projet
       "Création de la page d'accueil d’une agence de voyage",
       "Développé en HTML & CSS",
       "Responsive design adapté aux mobiles et tablettes",
       "Projet validé dans le cadre de la formation OpenClassrooms"
     ],
-    image: "/images/booki.webp",
-    skills: ["HTML", "CSS"],
-    link: "https://github.com/Omzo02/deuxiemeprojet",
+    image: "/images/booki.webp", // Chemin de l'image associée au projet
+    skills: ["HTML", "CSS"], // Compétences principales utilisées
+    link: "https://github.com/Omzo02/deuxiemeprojet", // Lien vers le code source du projet
     details: {
+      // Détails plus précis du projet
       problematiques: [
         "Créer une interface claire pour les utilisateurs",
         "Rendre le site responsive sur tous les écrans"
@@ -20,7 +23,7 @@ const projects = [
         "Utilisation de Flexbox et Grid pour la mise en page",
         "Media queries adaptées pour mobile et tablette"
       ],
-      competences: ["HTML5", "CSS3", "Responsive Design"]
+      competences: ["HTML5", "CSS3", "Responsive Design"] // Compétences validées
     }
   },
   {
@@ -121,4 +124,5 @@ const projects = [
   }
 ];
 
+// On exporte le tableau pour qu'il soit utilisé dans d'autres composants (ex: ProjectCard)
 export default projects;
