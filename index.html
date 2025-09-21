@@ -4,34 +4,62 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Titre du site -->
     <title>Portfolio Ousmane DIOP - Développeur Web</title>
-
-    <!-- Description pour les moteurs de recherche -->
-    <meta name="description" content="Portfolio de Ousmane DIOP, développeur web en reconversion après 21 ans dans l'industrie. Découvrez mes projets React, Vite et mes compétences en développement web." />
-
-    <!-- Mots-clés -->
+    <meta name="description" content="Portfolio de Ousmane DIOP, développeur web en reconversion. Découvrez mes projets React, Vite et mes compétences en développement web." />
     <meta name="keywords" content="Ousmane DIOP, portfolio, développeur web, React, Vite, reconversion, projets web, front-end" />
-
-    <!-- Auteur -->
     <meta name="author" content="Ousmane DIOP" />
 
-    <!-- Social Media / Open Graph -->
+    <!-- Open Graph -->
     <meta property="og:title" content="Portfolio Ousmane DIOP - Développeur Web" />
     <meta property="og:description" content="Découvrez mes projets React et Vite ainsi que mon parcours en reconversion dans le développement web." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://github.com/Omzo02/mon-portfolio" />
+    <meta property="og:url" content="https://omzo.fr" />
     <meta property="og:image" content="/images/moi.webp" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon.png" />
 
-    
+    <!-- ---------------------- -->
+    <!-- JSON-LD Schema.org pour Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Ousmane DIOP",
+      "url": "https://omzo.fr",
+      "sameAs": [
+        "https://github.com/Omzo02",
+        "https://www.linkedin.com/in/ousmane-diop"
+      ],
+      "jobTitle": "Développeur Web",
+      "image": "https://omzo.fr/images/moi.webp",
+      "email": "mailto:odiop75@gmail.com",
+      "description": "Portfolio de Ousmane DIOP, développeur web en reconversion après 21 ans dans l'industrie. Découvrez mes projets React, Vite et mes compétences en développement web."
+    }
+    </script>
   </head>
 
   <body>
-    <!-- Conteneur principal pour React -->
+    <!-- Conteneur principal React -->
     <div id="root"></div>
+
+    <!-- Exemple de microtags HTML pour SEO -->
+    <div itemscope itemtype="https://schema.org/Person">
+      <h1 itemprop="name">Ousmane DIOP</h1>
+      <p itemprop="jobTitle">Développeur Web</p>
+      <img src="/images/moi.webp" alt="Photo de Ousmane DIOP" itemprop="image"/>
+      <p itemprop="description">
+        Portfolio de Ousmane DIOP, développeur web en reconversion après 21 ans dans l'industrie.
+      </p>
+      <p>
+        Contact : <a href="mailto:odiop75@gmail.com" itemprop="email">odiop75@gmail.com</a>
+      </p>
+      <p>
+        Mes réseaux : 
+        <a href="https://github.com/Omzo02" itemprop="sameAs">GitHub</a> | 
+        <a href="https://www.linkedin.com/in/ousmane-diop" itemprop="sameAs">LinkedIn</a>
+      </p>
+    </div>
 
     <!-- Script principal React -->
     <script type="module" src="/src/main.jsx"></script>
