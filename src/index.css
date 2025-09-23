@@ -310,7 +310,7 @@ a {
   text-align: center;
   min-height: 80vh;
   gap: 1rem;
-  padding: 2rem;
+  padding: 6rem;
   color: #e53935;          /* rouge pour erreur */
   background-color: #fff;
 }
