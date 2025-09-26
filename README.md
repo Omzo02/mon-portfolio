@@ -27,7 +27,7 @@ Ce portfolio est construit avec React et Vite, et inclut une page de contact fon
 
 1. **Cloner le projet :**
 ```bash
-git clone <lien-du-repo>
+git clone <https://github.com/Omzo02/mon-portfolio.git>
 
 npm install
 
