@@ -1,22 +1,22 @@
 /* ---------------------- */
 /* RESET & BASE STYLES */
-/* On supprime les marges par défaut et on uniformise l'affichage */
+/* On supprime marges et paddings par défaut, et on définit box-sizing pour éviter les problèmes de dimension */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Styles généraux pour la page */
+/* Styles globaux pour html, body et root */
 html, body, #root {
-  font-family: 'Arial', sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background-color: #fff;
-  min-height: 100%;
+  font-family: 'Arial', sans-serif; /* Police principale */
+  line-height: 1.6;                  /* Hauteur de ligne */
+  color: #333;                       /* Couleur du texte */
+  background-color: #fff;            /* Fond blanc */
+  min-height: 100%;                  /* Hauteur minimum */
 }
 
-/* Liens : pas de soulignement par défaut, couleur héritée */
+/* Liens sans soulignement et couleur héritée */
 a {
   text-decoration: none;
   color: inherit;
@@ -24,13 +24,14 @@ a {
 
 /* ---------------------- */
 /* APP WRAPPER */
-/* Structure générale : page en colonne avec footer collé en bas */
+/* Wrapper global pour avoir flex et hauteur min */
 .app-wrapper {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100vh; /* Toujours occuper toute la hauteur de la page */
 }
 
+/* Wrapper pour le contenu */
 .content-wrapper {
   flex: 1;
   display: flex;
@@ -39,7 +40,7 @@ a {
 
 /* ---------------------- */
 /* NAVBAR */
-/* Barre de navigation fixe en haut, avec ombre légère */
+/* Barre de navigation fixe en haut */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -51,10 +52,9 @@ a {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 1000; /* Toujours au-dessus du contenu */
 }
 
-/* Logo texte */
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
@@ -64,17 +64,18 @@ a {
 .nav-links {
   list-style: none;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Par défaut, colonne pour mobile */
   gap: 0.5rem;
 }
 
+/* Styles des liens */
 .nav-links li a {
   color: #333;
   font-weight: bold;
   transition: color 0.3s;
 }
 
-/* Lien actif et effet hover */
+/* Hover et lien actif */
 .nav-links li a:hover,
 .nav-links li a.active {
   color: #0f1ea2;
@@ -82,26 +83,26 @@ a {
 }
 
 .navbar a.active {
-  color: #2e7d32; /* Vert foncé pour accessibilité */
+  color: #2e7d32;
   background-color: #f0f0f0;
 }
 
 /* ---------------------- */
 /* HOME & ABOUT PAGES */
-/* Mise en page des sections principales */
+/* Containers pour pages Home et About */
 .home-container,
 .about-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Mobile par défaut */
   align-items: center;
   gap: 1.5rem;
-  padding: 6rem 2rem 6rem; /* espace pour la navbar fixe */
+  padding: 6rem 2rem 6rem;
   max-width: 1000px;
   margin: 0 auto;
   text-align: center;
 }
 
-/* Bloc texte des pages */
+/* Textes dans Home et About */
 .home-text,
 .about-text {
   display: flex;
@@ -111,13 +112,14 @@ a {
   gap: 1rem;
 }
 
-/* Titres */
+/* Titres principaux */
 .home-text h1,
 .about-text h1 {
   font-size: 2rem;
   margin-bottom: 0.5rem;
 }
 
+/* Sous-titres */
 .home-text h2 {
   font-size: 1.2rem;
   margin-bottom: 1rem;
@@ -132,8 +134,9 @@ a {
   justify-content: center;
 }
 
+/* Boutons principaux */
 .btn {
-  background-color: #2e7d32; /* Vert foncé = bon contraste */
+  background-color: #2e7d32;
   color: #fff;
   padding: 0.8rem 1.5rem;
   border-radius: 5px;
@@ -145,9 +148,9 @@ a {
   background-color: #1b5e20;
 }
 
-/* Boutons secondaires (ex : télécharger CV) */
+/* Boutons secondaires */
 .btn-secondary {
-  background-color: #1565c0; /* Bleu soutenu */
+  background-color: #1565c0;
   color: #fff;
 }
 
@@ -166,6 +169,7 @@ a {
   object-position: center top;
 }
 
+/* Containers des photos */
 .home-photo-container,
 .about-photo-container {
   display: flex;
@@ -189,7 +193,7 @@ a {
   margin-bottom: 2rem;
 }
 
-/* Liste des projets */
+/* Conteneur projets */
 .projects-container {
   display: flex;
   flex-direction: column;
@@ -212,6 +216,7 @@ a {
   box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
 
+/* Image projet */
 .project-card img {
   max-width: 100%;
   height: auto;
@@ -219,6 +224,7 @@ a {
   margin-bottom: 15px;
 }
 
+/* Titres projet */
 .project-card h2 {
   font-size: 1.4rem;
   margin-bottom: 10px;
@@ -226,11 +232,13 @@ a {
   background-color: #ffffff;
 }
 
+/* Description projet */
 .project-card p {
   margin-bottom: 10px;
   color: #333;
 }
 
+/* Compétences projet */
 .project-card .skills {
   font-style: italic;
   font-size: 0.9rem;
@@ -238,6 +246,7 @@ a {
   background-color: #ffffff;
 }
 
+/* Bouton lien projet */
 .project-card a {
   display: inline-block;
   margin-top: 10px;
@@ -253,6 +262,7 @@ a {
   background: #005f8d;
 }
 
+/* Liste description */
 .description-list {
   text-align: left;
   margin: 0 auto 1rem auto;
@@ -264,6 +274,105 @@ a {
 
 .description-list li {
   margin-bottom: 0.4rem;
+}
+
+/* ---------------------- */
+/* CONTACT PAGE */
+.contact-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* En-tête page contact */
+.contact-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.contact-header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+/* Conteneur form + infos */
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Formulaire contact */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: #fafafa;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  width: 100%;
+  box-sizing: border-box; /* Important pour garder largeur */
+}
+
+/* Labels formulaire */
+.contact-form label {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Inputs et textarea */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+/* Focus inputs */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #2e7d32;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(46,125,50,0.2);
+}
+
+/* Bouton envoyer */
+.contact-form .btn {
+  align-self: flex-start;
+  background-color: #2e7d32;
+  color: #fff;
+  font-weight: bold;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-form .btn:hover {
+  background-color: #1b5e20;
+}
+
+/* Messages success / error */
+.form-success {
+  color: #2e7d32;
+  margin-top: 0.5rem;
+}
+
+.form-error {
+  color: #e53935;
+  margin-top: 0.5rem;
 }
 
 /* ---------------------- */
@@ -305,13 +414,13 @@ a {
 .notfound-container {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* vertical centré */
-  align-items: center;     /* horizontal centré */
+  justify-content: center;
+  align-items: center;
   text-align: center;
   min-height: 80vh;
   gap: 1rem;
   padding: 6rem;
-  color: #e53935;          /* rouge pour erreur */
+  color: #e53935;
   background-color: #fff;
 }
 
@@ -323,7 +432,7 @@ a {
 .notfound-container h2 {
   font-size: 1.5rem;
   margin-bottom: 2rem;
-  color: #333; /* texte secondaire */
+  color: #333;
 }
 
 .notfound-container svg {
@@ -338,6 +447,7 @@ a {
 /* ---------------------- */
 /* RESPONSIVE - DESKTOP */
 @media (min-width: 769px) {
+  /* Home & About */
   .home-container,
   .about-container {
     flex-direction: row;
@@ -345,20 +455,23 @@ a {
     align-items: center;
     gap: 3rem;
     text-align: left;
-    padding-top: 6rem; /* espace sous navbar fixe */
+    padding-top: 6rem; /* Décalage navbar fixe */
   }
 
+  /* Photos */
   .home-photo,
   .about-photo {
     width: 450px;
     height: 450px;
   }
 
+  /* Textes */
   .home-text,
   .about-text {
     flex: 1;
   }
 
+  /* Projects */
   .projects-page {
     padding-top: 6rem;
   }
@@ -374,32 +487,51 @@ a {
     max-width: 300px;
   }
 
+  /* Nav links */
   .nav-links {
     flex-direction: row;
     gap: 1.5rem;
   }
+
+  /* Contact form container */
+  .contact-container {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .contact-form {
+    flex: 1;
+  }
 }
 
 /* ---------------------- */
-/* RESPONSIVE - MOBILE */
+/* RESPONSIVE - TABLETTE & MOBILE */
 @media (max-width: 768px) {
-  /* Home & About : colonne centrée */
+  /* Home & About */
   .home-container,
   .about-container {
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 1.5rem;
-    padding-top: 8rem;  /* espace sous navbar fixe */
-    padding-bottom: 6rem; /* espace avant footer */
+    padding-top: 8rem; /* Navbar fixe */
+    padding-bottom: 6rem;
   }
 
+  /* Page contact : on ajoute espace pour navbar */
+  .contact-page {
+    padding-top: 11rem;
+    padding-bottom: 6rem;
+  }
+
+  /* Photos */
   .home-photo,
   .about-photo {
     width: 150px;
     height: 150px;
   }
 
+  /* Projects */
   .projects-page {
     padding-top: 8rem;
     padding-bottom: 6rem;
@@ -409,9 +541,9 @@ a {
     flex-direction: column;
   }
 
-  /* NotFound correction pour mobile */
+  /* Not found page */
   .notfound-container {
-    padding-top: 8rem; /* espace sous navbar fixe */
-    min-height: auto;   /* supprimer hauteur fixe pour mobile */
+    padding-top: 8rem;
+    min-height: auto;
   }
 }

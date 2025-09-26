@@ -1,12 +1,34 @@
-# React + Vite
+# Portfolio Ousmane DIOP
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+Portfolio personnel pour présenter mes projets et compétences en développement web.  
+Ce portfolio est construit avec React et Vite, et inclut une page de contact fonctionnelle utilisant EmailJS.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies utilisées
+- HTML, CSS, JavaScript
+- React + Vite
+- EmailJS pour le formulaire de contact
+- Responsive design (desktop, tablette, mobile)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Fonctionnalités
+- **Page d’accueil et à propos** : Présentation personnelle et photo de profil.
+- **Page projets** : Affichage des projets avec cartes interactives et descriptions.
+- **Page contact** : Formulaire de contact fonctionnel, envoi d’e-mail via EmailJS.
+- **Responsive design** : Compatible avec desktop, tablette et mobile.
+- **Formulaire sécurisé** : Les identifiants EmailJS sont stockés dans un fichier `.env` et non dans le code source.
+
+---
+
+## Installation
+
+1. **Cloner le projet :**
+```bash
+git clone <lien-du-repo>
+
+npm install
+
+npm run dev

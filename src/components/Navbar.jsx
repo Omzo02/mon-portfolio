@@ -18,10 +18,7 @@ function Navbar() {
         {/* Liste des liens de navigation */}
         <ul className="nav-links">
 
-          {/* Lien vers la page d'accueil
-              - "end" permet de matcher exactement "/"
-              - className change dynamiquement selon si le lien est actif ou non
-              - aria-current="page" est ajouté uniquement si la page est active */}
+          {/* Lien vers la page d'accueil */}
           <li>
             <NavLink 
               to="/" 
@@ -52,6 +49,17 @@ function Navbar() {
               aria-current={({ isActive }) => (isActive ? "page" : undefined)}
             >
               À propos
+            </NavLink>
+          </li>
+
+          {/* Lien vers la page "Contact" */}
+          <li>
+            <NavLink 
+              to="/contact"
+              className={({ isActive }) => (isActive ? "active" : "")}
+              aria-current={({ isActive }) => (isActive ? "page" : undefined)}
+            >
+              Contact
             </NavLink>
           </li>
         </ul>

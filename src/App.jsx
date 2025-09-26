@@ -9,7 +9,8 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
 import About from './pages/About';
-import NotFound from './pages/NotFound'; // <-- import page 404
+import NotFound from './pages/NotFound';
+import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -32,7 +33,12 @@ function App() {
           {/* Route vers la page "À propos" */}
           <Route path="/about" element={<About />} />
 
-          <Route path="*" element={<NotFound />} /> {/* <-- route 404 */}
+          {/* Route cers la page 404 */}
+          <Route path="*" element={<NotFound />} /> 
+
+          {/* Route vesr la page de contact */}
+          <Route path="/contact" element={<Contact />} /> 
+
         </Routes>
       </main>
 

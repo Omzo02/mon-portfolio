@@ -121,6 +121,39 @@ const projects = [
       ],
       competences: ["SEO", "Accessibilité", "Lighthouse", "Schema.org", "Optimisation"]
     }
+  },
+  {
+    id: 6,
+  title: "Portfolio",
+  description: [
+    "Création de mon portfolio personnel",
+    "Présentation de mes projets et compétences",
+    "Mise en ligne et déploiement sur hébergement",
+    "Design responsive adapté desktop et mobile"
+  ],
+  image: "/images/portfolio.webp", // à créer et placer dans ton dossier images
+  skills: ["HTML", "CSS", "JavaScript", "React", "Responsive Design"],
+  link: "https://github.com/Omzo02/mon-portfolio.git",
+  details: {
+    problematiques: [
+      "Créer un site personnel moderne et professionnel",
+      "Présenter mes projets et compétences de manière claire"
+    ],
+    solutions: [
+      "Développement avec HTML, CSS et JavaScript (React)",
+      "Mise en place d’une structure claire et responsive",
+      "Optimisation SEO pour améliorer la visibilité",
+      "Déploiement et hébergement sur OVH"
+    ],
+    competences: [
+      "Développement front-end",
+      "Responsive design",
+      "SEO de base",
+      "Hébergement OVH",
+      "Hébergement et mise en ligne"
+      
+    ]
+  }
   }
 ];
 
