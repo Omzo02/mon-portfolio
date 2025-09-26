@@ -1,75 +1,173 @@
-// src/pages/Contact.jsx
-import React, { useRef, useState } from "react";
-import { sendForm } from "@emailjs/browser";
+// Importation des hooks React et de la bibliothèque EmailJS
+import { useState, useEffect } from "react";
+import emailjs from "@emailjs/browser";
 
-function Contact() {
-  const formRef = useRef(null);
-  const [status, setStatus] = useState(null); // null | "sending" | "success" | "error"
+const Contact = () => {
+  // ----------------------
+  // État du formulaire
+  // ----------------------
+  const [formData, setFormData] = useState({
+    name: "",   // Nom de l'utilisateur
+    email: "",  // Email de l'utilisateur
+    message: "",// Message à envoyer
+  });
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus("sending");
+  // État pour afficher le message de succès ou d'erreur
+  const [status, setStatus] = useState("");
 
-  
-    const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_42hjjco";
-    const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_b7pj71x";
-    const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "Jg19Zp-x23RLA4iaK";
+  // État pour savoir si le formulaire est valide et activer/désactiver le bouton
+  const [isFormValid, setIsFormValid] = useState(false);
 
-    try {
-      await sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, PUBLIC_KEY);
-      setStatus("success");
-      formRef.current.reset();
-    } catch (err) {
-      console.error("EmailJS error:", err);
-      setStatus("error");
-    }
+  // ----------------------
+  // Identifiants EmailJS (stockés dans .env)
+  // ----------------------
+  const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+  // ----------------------
+  // Gestion de la saisie dans le formulaire
+  // ----------------------
+  const handleChange = (e) => {
+    // Met à jour l'état du formulaire en fonction de l'input modifié
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // ----------------------
+  // Vérification dynamique du formulaire
+  // ----------------------
+  useEffect(() => {
+    // Regex simple pour vérifier le format de l'email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
+
+    // Le formulaire est valide si tous les champs sont remplis et que l'email est correct
+    setIsFormValid(
+      formData.name.trim() !== "" &&
+      emailRegex.test(formData.email) &&
+      formData.message.trim() !== ""
+    );
+  }, [formData]); // Déclenché à chaque modification des champs
+
+  // ----------------------
+  // Validation complète avant l'envoi
+  // ----------------------
+  const validateForm = () => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
+
+    if (!formData.name.trim()) {
+      setStatus("❌ Le nom est obligatoire.");
+      return false;
+    }
+    if (!formData.email.trim()) {
+      setStatus("❌ L’email est obligatoire.");
+      return false;
+    }
+    if (!emailRegex.test(formData.email)) {
+      setStatus("❌ L’email n’est pas valide.");
+      return false;
+    }
+    if (!formData.message.trim()) {
+      setStatus("❌ Le message est obligatoire.");
+      return false;
+    }
+    return true;
+  };
+
+  // ----------------------
+  // Envoi du formulaire via EmailJS
+  // ----------------------
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Empêche le rechargement de la page
+    setStatus("");       // Réinitialise le message d'état
+
+    // Validation avant envoi
+    if (!validateForm()) return;
+
+    // Envoi à EmailJS
+    emailjs
+      .send(SERVICE_ID, TEMPLATE_ID, formData, PUBLIC_KEY)
+      .then(() => {
+        // Succès : message affiché et formulaire réinitialisé
+        setStatus("✅ Message envoyé avec succès !");
+        setFormData({ name: "", email: "", message: "" });
+      })
+      .catch(() => {
+        // Erreur : message d'erreur affiché
+        setStatus("❌ Une erreur est survenue, veuillez réessayer.");
+      });
+  };
+
+  // ----------------------
+  // JSX du formulaire de contact
+  // ----------------------
   return (
-    <main className="contact-page" aria-labelledby="contact-title">
-      <header className="contact-header">
-        <h1 id="contact-title">Contact</h1>
-         
-      </header>
+    <div className="contact-page">
+      {/* En-tête de la page */}
+      <div className="contact-header">
+        <h1>Contactez-moi</h1>
+        <p>Remplissez le formulaire ci-dessous pour m’envoyer un message.</p>
+      </div>
 
-      <section className="contact-container">
-        <form
-          ref={formRef}
-          className="contact-form"
-          onSubmit={handleSubmit}
-          aria-label="Formulaire de contact"
-        >
-          <label htmlFor="user_name">Nom *</label>
-          <input id="user_name" name="user_name" type="text" required aria-required="true" />
+      <div className="contact-container">
+        {/* Formulaire */}
+        <form className="contact-form" onSubmit={handleSubmit}>
+          {/* Champ Nom */}
+          <label htmlFor="name">Nom</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
 
-          <label htmlFor="user_email">Email *</label>
-          <input id="user_email" name="user_email" type="email" required aria-required="true" />
+          {/* Champ Email */}
+          <label htmlFor="email">E-mail</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
 
-          <label htmlFor="subject">Objet</label>
-          <input id="subject" name="subject" type="text" />
+          {/* Champ Message */}
+          <label htmlFor="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            value={formData.message}
+            onChange={handleChange}
+            required
+          ></textarea>
 
-          <label htmlFor="message">Message *</label>
-          <textarea id="message" name="message" rows="8" required aria-required="true" />
-
+          {/* Bouton Envoyer */}
           <button
             type="submit"
-            className="btn"
-            aria-label="Envoyer le message"
-            disabled={status === "sending"}
+            className={`btn ${isFormValid ? "active" : "disabled"}`}
+            disabled={!isFormValid} // Désactivé si le formulaire n'est pas valide
           >
-            {status === "sending" ? "Envoi..." : "Envoyer"}
+            Envoyer
           </button>
 
-          {status === "success" && (
-            <p role="status" className="form-success">Merci — votre message a bien été envoyé.</p>
-          )}
-          {status === "error" && (
-            <p role="alert" className="form-error">Erreur lors de l'envoi. Réessaye plus tard.</p>
+          {/* Message de statut (succès ou erreur) */}
+          {status && (
+            <p
+              className={
+                status.startsWith("✅") ? "form-success" : "form-error"
+              }
+            >
+              {status}
+            </p>
           )}
         </form>
-      </section>
-    </main>
+      </div>
+    </div>
   );
-}
+};
 
+// Export du composant pour pouvoir l'utiliser ailleurs
 export default Contact;

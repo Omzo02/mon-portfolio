@@ -1,3 +1,4 @@
+// Importation de React
 import React from 'react';
 
 function About() {
@@ -5,7 +6,9 @@ function About() {
     // Élément principal de la page "À propos"
     <main className="about-container">
       
-      {/* Section texte de présentation */}
+      {/* ----------------------
+          Section texte de présentation
+          ---------------------- */}
       <div className="about-text">
         {/* Titre principal */}
         <h1 style={{ marginTop: "0.5rem" }}>À propos de moi</h1>
@@ -16,11 +19,11 @@ function About() {
         {/* Bloc contenant ta photo */}
         <div className="about-photo-container">
           <img
-            src="/images/moi.webp" // Image de ton portrait
-            width="450"
-            height="450"
-            alt="Portrait Ousmane DIOP, développeur web" // Texte alternatif important pour l’accessibilité et le SEO
-            className="about-photo"
+            src="/images/moi.webp"             // Chemin vers l'image de ton portrait
+            width="450"                        // Largeur de l'image
+            height="450"                       // Hauteur de l'image
+            alt="Portrait Ousmane DIOP, développeur web" // Texte alternatif pour l’accessibilité et le SEO
+            className="about-photo"            // Classe CSS pour styliser l'image
           />
         </div>
 
@@ -33,9 +36,14 @@ function About() {
         </p>
       </div>
 
-      {/* Section sur ton objectif professionnel */}
+      {/* ----------------------
+          Section objectif professionnel
+          ---------------------- */}
       <section className="about-objective">
+        {/* Titre de la section */}
         <h2 style={{ marginTop: "1rem" }}>🎯 Objectif professionnel</h2>
+
+        {/* Texte expliquant ton objectif professionnel */}
         <p>
           Je recherche un poste de <strong>développeur web front-end</strong> ou 
           <strong> full-stack</strong>, en CDI.  
@@ -44,8 +52,11 @@ function About() {
         </p>
       </section>
 
-      {/* Section listant tes compétences */}
+      {/* ----------------------
+          Section compétences
+          ---------------------- */}
       <section className="about-skills">
+        {/* Titre de la section */}
         <h2 style={{ marginTop: "1rem" }}>🛠️ Compétences</h2>
 
         {/* Grille regroupant les cartes de compétences */}
@@ -62,4 +73,5 @@ function About() {
   );
 }
 
+// Export du composant pour pouvoir l'utiliser dans l'application
 export default About;

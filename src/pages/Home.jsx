@@ -1,4 +1,6 @@
+// Importation de React pour pouvoir créer un composant
 import React from "react";
+// Importation du composant Link de react-router-dom pour la navigation interne
 import { Link } from "react-router-dom";
 
 function Home() {
@@ -6,28 +8,32 @@ function Home() {
     // Élément principal de la page d’accueil
     <main className="home-container">
 
-      {/* Section principale avec texte de présentation */}
+      {/* ----------------------
+          Section principale avec texte de présentation
+          ---------------------- */}
       <section className="home-text" aria-label="Présentation d'Ousmane DIOP">
-        {/* Titre principal avec ton prénom en surbrillance */}
+        
+        {/* Titre principal avec mise en évidence du prénom */}
         <h1>Salut, moi c’est <span>Ousmane</span></h1>
 
-        {/* Bloc qui regroupe le texte et la photo pour une meilleure lisibilité sur mobile */}
+        {/* Bloc regroupant le texte et la photo pour un affichage clair sur mobile */}
         <div className="home-text-photo">
-          {/* Sous-titre indiquant ton statut actuel */}
+          
+          {/* Sous-titre indiquant mon statut actuel */}
           <h2>Développeur web en formation</h2>
 
-          {/* Conteneur pour ta photo avec description accessible */}
+          {/* Conteneur pour ta photo */}
           <div className="home-photo-container" aria-label="Portrait d'Ousmane DIOP, développeur web">
             <img 
-              src="/images/moi.webp"  // Photo importée
+              src="/images/moi.webp"      // Photo de profil
               width="480"
               height="647"
-              alt="Portrait Ousmane DIOP, développeur web" // Texte alternatif utile pour SEO et accessibilité
+              alt="Portrait Ousmane DIOP, développeur web" // Texte alternatif pour l’accessibilité et le SEO
               className="home-photo"
             />
           </div>
 
-          {/* Texte de présentation décrivant ton parcours et ton objectif */}
+          {/* Paragraphe présentant mon parcours et mon objectif */}
           <p>
             Je suis un développeur web en formation, passionné par React et JavaScript. 
             Ce portfolio présente mon parcours, mes compétences et les projets sur lesquels j’ai travaillé. 
@@ -35,9 +41,12 @@ function Home() {
           </p>
         </div>
 
-        {/* Boutons d’action : accès aux projets et téléchargement du CV */}
+        {/* ----------------------
+            Boutons d’action : accès aux projets et téléchargement du CV
+            ---------------------- */}
         <div className="home-buttons">
-          {/* Lien interne vers la page projets */}
+
+          {/* Lien interne vers la page Projets */}
           <Link 
             to="/projects" 
             className="btn high-contrast"
@@ -46,7 +55,7 @@ function Home() {
             📂 Voir mes projets
           </Link>
 
-          {/* Lien externe permettant de télécharger ton CV */}
+          {/* Lien externe pour télécharger le CV */}
           <a 
             href="/CV-Ousmane.pdf" 
             className="btn btn-secondary high-contrast"
@@ -61,4 +70,5 @@ function Home() {
   );
 }
 
+// Exportation du composant pour pouvoir l’utiliser ailleurs
 export default Home;

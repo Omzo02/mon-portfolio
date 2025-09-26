@@ -2,7 +2,8 @@
 
 ## Description
 Portfolio personnel pour présenter mes projets et compétences en développement web.  
-Ce portfolio est construit avec React et Vite, et inclut une page de contact fonctionnelle utilisant EmailJS.
+Ce portfolio est construit avec React et Vite, et inclut une page de contact fonctionnelle utilisant EmailJS. 
+https://www.omzo.fr/
 
 ---
 

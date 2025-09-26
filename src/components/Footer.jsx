@@ -14,14 +14,12 @@ function Footer() {
       {/* Navigation contenant les liens vers mes réseaux sociaux */}
       <nav className="footer-links" aria-label="Réseaux sociaux">
 
-        {/* Lien vers mon adresse email avec une icône enveloppe */}
-        <a href="mailto:odiop75@gmail.com" aria-label="Envoyer un email">
+        {/* Lien vers la page Contact du site */}
+        <a href="/contact" aria-label="Page Contact">
           <FaEnvelope />
         </a>
 
-        {/* Lien vers mon profil GitHub. 
-            target="_blank" permet d’ouvrir dans un nouvel onglet,
-            rel="noopener noreferrer" protège contre certaines failles de sécurité */}
+        {/* Lien vers mon profil GitHub */}
         <a
           href="https://github.com/Omzo02"
           target="_blank"
@@ -31,7 +29,7 @@ function Footer() {
           <FaGithub />
         </a>
 
-        {/* Lien vers mon profil LinkedIn avec l’icône correspondante */}
+        {/* Lien vers mon profil LinkedIn */}
         <a
           href="https://linkedin.com/in/ousmane-diop-a72910111"
           target="_blank"
@@ -45,5 +43,5 @@ function Footer() {
   );
 }
 
-// Exportation du composant pour pouvoir l’utiliser ailleurs dans le projet
+// Exportation du composant
 export default Footer;

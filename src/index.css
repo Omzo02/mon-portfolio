@@ -1,22 +1,19 @@
 /* ---------------------- */
 /* RESET & BASE STYLES */
-/* On supprime marges et paddings par défaut, et on définit box-sizing pour éviter les problèmes de dimension */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Styles globaux pour html, body et root */
 html, body, #root {
-  font-family: 'Arial', sans-serif; /* Police principale */
-  line-height: 1.6;                  /* Hauteur de ligne */
-  color: #333;                       /* Couleur du texte */
-  background-color: #fff;            /* Fond blanc */
-  min-height: 100%;                  /* Hauteur minimum */
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  min-height: 100%;
 }
 
-/* Liens sans soulignement et couleur héritée */
 a {
   text-decoration: none;
   color: inherit;
@@ -24,14 +21,12 @@ a {
 
 /* ---------------------- */
 /* APP WRAPPER */
-/* Wrapper global pour avoir flex et hauteur min */
 .app-wrapper {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Toujours occuper toute la hauteur de la page */
+  min-height: 100vh;
 }
 
-/* Wrapper pour le contenu */
 .content-wrapper {
   flex: 1;
   display: flex;
@@ -40,7 +35,6 @@ a {
 
 /* ---------------------- */
 /* NAVBAR */
-/* Barre de navigation fixe en haut */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -52,7 +46,7 @@ a {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000; /* Toujours au-dessus du contenu */
+  z-index: 1000;
 }
 
 .logo {
@@ -60,22 +54,19 @@ a {
   font-weight: bold;
 }
 
-/* Liens de navigation */
 .nav-links {
   list-style: none;
   display: flex;
-  flex-direction: column; /* Par défaut, colonne pour mobile */
+  flex-direction: column;
   gap: 0.5rem;
 }
 
-/* Styles des liens */
 .nav-links li a {
   color: #333;
   font-weight: bold;
   transition: color 0.3s;
 }
 
-/* Hover et lien actif */
 .nav-links li a:hover,
 .nav-links li a.active {
   color: #0f1ea2;
@@ -88,12 +79,11 @@ a {
 }
 
 /* ---------------------- */
-/* HOME & ABOUT PAGES */
-/* Containers pour pages Home et About */
+/* HOME & ABOUT */
 .home-container,
 .about-container {
   display: flex;
-  flex-direction: column; /* Mobile par défaut */
+  flex-direction: column;
   align-items: center;
   gap: 1.5rem;
   padding: 6rem 2rem 6rem;
@@ -102,7 +92,6 @@ a {
   text-align: center;
 }
 
-/* Textes dans Home et About */
 .home-text,
 .about-text {
   display: flex;
@@ -112,21 +101,19 @@ a {
   gap: 1rem;
 }
 
-/* Titres principaux */
 .home-text h1,
 .about-text h1 {
   font-size: 2rem;
   margin-bottom: 0.5rem;
 }
 
-/* Sous-titres */
 .home-text h2 {
   font-size: 1.2rem;
   margin-bottom: 1rem;
 }
 
 /* ---------------------- */
-/* BOUTONS */
+/* BUTTONS */
 .home-buttons {
   display: flex;
   gap: 1rem;
@@ -134,7 +121,6 @@ a {
   justify-content: center;
 }
 
-/* Boutons principaux */
 .btn {
   background-color: #2e7d32;
   color: #fff;
@@ -142,24 +128,21 @@ a {
   border-radius: 5px;
   font-weight: bold;
   transition: background 0.3s;
+  border: none;
+  cursor: pointer;
 }
 
 .btn:hover {
   background-color: #1b5e20;
 }
 
-/* Boutons secondaires */
-.btn-secondary {
-  background-color: #1565c0;
-  color: #fff;
-}
-
-.btn-secondary:hover {
-  background-color: #0d47a1;
+.btn:disabled {
+  background-color: #ccc;   /* Gris quand désactivé */
+  cursor: not-allowed;
 }
 
 /* ---------------------- */
-/* PHOTOS PROFIL */
+/* PHOTOS */
 .home-photo,
 .about-photo {
   width: 150px;
@@ -169,7 +152,6 @@ a {
   object-position: center top;
 }
 
-/* Containers des photos */
 .home-photo-container,
 .about-photo-container {
   display: flex;
@@ -179,7 +161,7 @@ a {
 }
 
 /* ---------------------- */
-/* PROJECTS PAGE */
+/* PROJECTS */
 .projects-page {
   text-align: center;
   padding: 50px 20px;
@@ -193,7 +175,6 @@ a {
   margin-bottom: 2rem;
 }
 
-/* Conteneur projets */
 .projects-container {
   display: flex;
   flex-direction: column;
@@ -202,7 +183,6 @@ a {
   margin: 0 auto;
 }
 
-/* Carte projet */
 .project-card {
   background: #fff;
   border-radius: 12px;
@@ -216,7 +196,6 @@ a {
   box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
 
-/* Image projet */
 .project-card img {
   max-width: 100%;
   height: auto;
@@ -224,7 +203,6 @@ a {
   margin-bottom: 15px;
 }
 
-/* Titres projet */
 .project-card h2 {
   font-size: 1.4rem;
   margin-bottom: 10px;
@@ -232,13 +210,11 @@ a {
   background-color: #ffffff;
 }
 
-/* Description projet */
 .project-card p {
   margin-bottom: 10px;
   color: #333;
 }
 
-/* Compétences projet */
 .project-card .skills {
   font-style: italic;
   font-size: 0.9rem;
@@ -246,7 +222,6 @@ a {
   background-color: #ffffff;
 }
 
-/* Bouton lien projet */
 .project-card a {
   display: inline-block;
   margin-top: 10px;
@@ -262,7 +237,6 @@ a {
   background: #005f8d;
 }
 
-/* Liste description */
 .description-list {
   text-align: left;
   margin: 0 auto 1rem auto;
@@ -277,7 +251,7 @@ a {
 }
 
 /* ---------------------- */
-/* CONTACT PAGE */
+/* CONTACT */
 .contact-page {
   max-width: 1000px;
   margin: 0 auto;
@@ -287,7 +261,6 @@ a {
   gap: 2rem;
 }
 
-/* En-tête page contact */
 .contact-header {
   text-align: center;
   margin-bottom: 1.5rem;
@@ -299,7 +272,6 @@ a {
   color: #2c3e50;
 }
 
-/* Conteneur form + infos */
 .contact-container {
   display: flex;
   flex-direction: column;
@@ -309,7 +281,6 @@ a {
   margin: 0 auto;
 }
 
-/* Formulaire contact */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -319,16 +290,14 @@ a {
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   width: 100%;
-  box-sizing: border-box; /* Important pour garder largeur */
+  box-sizing: border-box;
 }
 
-/* Labels formulaire */
 .contact-form label {
   font-weight: bold;
   color: #333;
 }
 
-/* Inputs et textarea */
 .contact-form input,
 .contact-form textarea {
   width: 100%;
@@ -339,7 +308,6 @@ a {
   font-family: inherit;
 }
 
-/* Focus inputs */
 .contact-form input:focus,
 .contact-form textarea:focus {
   border-color: #2e7d32;
@@ -347,24 +315,16 @@ a {
   box-shadow: 0 0 0 2px rgba(46,125,50,0.2);
 }
 
-/* Bouton envoyer */
+/* Style erreur input */
+.contact-form input.error,
+.contact-form textarea.error {
+  border-color: #e53935;
+}
+
 .contact-form .btn {
   align-self: flex-start;
-  background-color: #2e7d32;
-  color: #fff;
-  font-weight: bold;
-  padding: 0.8rem 1.5rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s;
 }
 
-.contact-form .btn:hover {
-  background-color: #1b5e20;
-}
-
-/* Messages success / error */
 .form-success {
   color: #2e7d32;
   margin-top: 0.5rem;
@@ -410,7 +370,7 @@ a {
 }
 
 /* ---------------------- */
-/* NOT FOUND PAGE */
+/* NOT FOUND */
 .notfound-container {
   display: flex;
   flex-direction: column;
@@ -445,9 +405,8 @@ a {
 }
 
 /* ---------------------- */
-/* RESPONSIVE - DESKTOP */
+/* RESPONSIVE */
 @media (min-width: 769px) {
-  /* Home & About */
   .home-container,
   .about-container {
     flex-direction: row;
@@ -455,23 +414,20 @@ a {
     align-items: center;
     gap: 3rem;
     text-align: left;
-    padding-top: 6rem; /* Décalage navbar fixe */
+    padding-top: 6rem;
   }
 
-  /* Photos */
   .home-photo,
   .about-photo {
     width: 450px;
     height: 450px;
   }
 
-  /* Textes */
   .home-text,
   .about-text {
     flex: 1;
   }
 
-  /* Projects */
   .projects-page {
     padding-top: 6rem;
   }
@@ -487,13 +443,11 @@ a {
     max-width: 300px;
   }
 
-  /* Nav links */
   .nav-links {
     flex-direction: row;
     gap: 1.5rem;
   }
 
-  /* Contact form container */
   .contact-container {
     flex-direction: row;
     align-items: flex-start;
@@ -504,34 +458,28 @@ a {
   }
 }
 
-/* ---------------------- */
-/* RESPONSIVE - TABLETTE & MOBILE */
 @media (max-width: 768px) {
-  /* Home & About */
   .home-container,
   .about-container {
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 1.5rem;
-    padding-top: 8rem; /* Navbar fixe */
+    padding-top: 8rem;
     padding-bottom: 6rem;
   }
 
-  /* Page contact : on ajoute espace pour navbar */
   .contact-page {
     padding-top: 11rem;
     padding-bottom: 6rem;
   }
 
-  /* Photos */
   .home-photo,
   .about-photo {
     width: 150px;
     height: 150px;
   }
 
-  /* Projects */
   .projects-page {
     padding-top: 8rem;
     padding-bottom: 6rem;
@@ -541,7 +489,6 @@ a {
     flex-direction: column;
   }
 
-  /* Not found page */
   .notfound-container {
     padding-top: 8rem;
     min-height: auto;
